@@ -1,11 +1,8 @@
-# subnetcalc-typer
-Silly simple subnet calculator using Typer and ipaddress
-
 
 # subnet calculator
 *Tested using Python 3.10.1*
 
-This is a simple subnet calculator using the build in python library *[ipaddress](https://python.readthedocs.io/en/latest/library/ipaddress.html)* and the library
+This is a silly simple subnet calculator using the build in python library *[ipaddress](https://python.readthedocs.io/en/latest/library/ipaddress.html)* and the library
 *[Typer](https://typer.tiangolo.com/)*.
 
 
