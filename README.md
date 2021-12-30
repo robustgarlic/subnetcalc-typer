@@ -15,3 +15,10 @@ This is a silly simple subnet calculator using the build in python library *[ipa
  3. add argument '-- more' to display additional information about the IPv4 Address.
 	 
 	 -example: `python subnetcalc.py 10.10.10.10/24 --more`
+
+
+**To Do**
+ - [ ] Ipv6.
+ - [ ] Incorporate the Library [Rich](https://github.com/willmcgugan/rich) and its features.
+ - [ ] Better output formatting
+ - [ ] Better Comments
