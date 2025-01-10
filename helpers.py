@@ -1,12 +1,10 @@
 import re
 from ipaddress import AddressValueError, IPv4Address, IPv4Interface
-import time
 
 
 class MyIPv4(IPv4Address):
-    '''https://realpython.com/python-ipaddress-module
-    referenced link above. 
-    '''
+    """Extended IPv4Address class with binary representation capabilities."""
+    
     @property
     def binary_repr(self, sep=".") -> str:
         """Represent IPv4 as 4 blocks of 8 bits."""
@@ -20,25 +18,21 @@ class MyIPv4(IPv4Address):
         return cls(i)
 
 
-def get_input(prompt=''):
-    try:
-        line = input(prompt)
-    except NameError:
-        line = input(prompt)
-    return line
-
-
-def validate_IPv4(ipaddr: str):
-    """Validates if entered argument is a valid IPv4 Address"""
+def validate_IPv4(ipaddr: str) -> bool:
+    """
+    Validates if entered argument is a valid IPv4 Address
+    
+    Args:
+        ipaddr: String containing an IP address with optional CIDR notation
+        
+    Returns:
+        bool: True if valid
+        
+    Raises:
+        AddressValueError: If the IP address is invalid
+    """
     try:
         IPv4Interface(ipaddr)
-        print('Valid IP Address entered!!: ', ipaddr)
-        time.sleep(3)
-        pass
+        return True
     except AddressValueError as e:
-        print('Invalid IP address has been entered.')
-        print('The entered value was: ', ipaddr)
-        print('Try running the script again with a valid address or network.')
-        time.sleep(3)
-        sys.exit()
-
+        raise AddressValueError(f"Invalid IP address: {ipaddr}. Please provide a valid IPv4 address with CIDR notation (e.g., 192.168.1.0/24)")
