@@ -57,6 +57,3 @@ python subnetcalc.py --help
 python subnetcalc.py calc --help
 ```
 
-## License
-
-MIT License
