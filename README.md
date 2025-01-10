@@ -1,26 +1,62 @@
+# Subnet Calculator
 
-# subnet calculator
-*Tested using Python 3.10.1*
+A powerful command-line subnet calculator built with Python and Typer.
 
-This is a silly simple subnet calculator using the build in python library *[ipaddress](https://python.readthedocs.io/en/latest/library/ipaddress.html)* and the library
-*[Typer](https://typer.tiangolo.com/)*.
+## Features
 
+- Calculate subnet information for IPv4 addresses
+- Display detailed IP address information
+- Show binary representation of IP and netmask
+- Beautiful command-line interface with colored output
+- Easy to use with intuitive commands
 
-# Usage
+## Installation
 
- 1. git clone https://github.com/robustgarlic/subnetcalc-typer.git
- 2. `pip -r install requirements.txt`
- 3.  example usage: `python subnetcalc.py 10.10.10.10/24` 
- 
-	 -*defaults to /32 subnet mask if none provided*
- 5. add argument '-- more' to display additional information about the IPv4 Address.
-	 
-	 -example: `python subnetcalc.py 10.10.10.10/24 --more`
+1. Clone this repository:
+```bash
+git clone https://github.com/yourusername/subnetcalc-typer.git
+cd subnetcalc-typer
+```
 
+2. Create a virtual environment and activate it:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-**To Do**
- - [ ] Ipv6.
- - [ ] Incorporate the Library [Rich](https://github.com/willmcgugan/rich) and its features.
- - [ ] Better output formatting
- - [ ] Better Comments
+## Usage
+
+Basic subnet calculation:
+```bash
+python subnetcalc.py calc 192.168.1.0/24
+```
+
+Show detailed information:
+```bash
+python subnetcalc.py calc 10.0.0.1/16 --detailed
+```
+
+Show binary representation:
+```bash
+python subnetcalc.py calc 172.16.0.0/12 --binary
+```
+
+Show version:
+```bash
+python subnetcalc.py --version
+```
+
+Get help:
+```bash
+python subnetcalc.py --help
+python subnetcalc.py calc --help
+```
+
+## License
+
+MIT License
